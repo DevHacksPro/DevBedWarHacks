@@ -1,4 +1,7 @@
+-- Gui to Lua
+-- Version: 3.2
 
+-- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
@@ -109,7 +112,7 @@ local Kb = Instance.new("TextButton")
 local TextLabel_24 = Instance.new("TextLabel")
 local Menu_24 = Instance.new("ImageButton")
 local Version_4 = Instance.new("TextLabel")
-local World_3 = Instance.new("Frame")
+local Other_2 = Instance.new("Frame")
 local Combat_7 = Instance.new("ImageButton")
 local MainText_6 = Instance.new("TextLabel")
 local Buttons_6 = Instance.new("Frame")
@@ -133,6 +136,7 @@ local TextLabel_30 = Instance.new("TextLabel")
 local Menu_30 = Instance.new("ImageButton")
 local Version_5 = Instance.new("TextLabel")
 
+--Properties:
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -1219,16 +1223,16 @@ Version_4.Text = "Version: 0.1"
 Version_4.TextColor3 = Color3.fromRGB(255, 255, 255)
 Version_4.TextSize = 24.000
 
-World_3.Name = "World"
-World_3.Parent = ScreenGui
-World_3.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-World_3.BorderSizePixel = 0
-World_3.Position = UDim2.new(0.416058362, 0, 0.520670533, 0)
-World_3.Size = UDim2.new(0, 200, 0, 43)
-World_3.Visible = false
+Other_2.Name = "Other"
+Other_2.Parent = ScreenGui
+Other_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+Other_2.BorderSizePixel = 0
+Other_2.Position = UDim2.new(0.416058362, 0, 0.520670533, 0)
+Other_2.Size = UDim2.new(0, 200, 0, 43)
+Other_2.Visible = false
 
 Combat_7.Name = "Combat"
-Combat_7.Parent = World_3
+Combat_7.Parent = Other_2
 Combat_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Combat_7.BackgroundTransparency = 1.000
 Combat_7.BorderSizePixel = 0
@@ -1237,7 +1241,7 @@ Combat_7.Size = UDim2.new(0, 38, 0, 34)
 Combat_7.Image = "rbxassetid://7733655834"
 
 MainText_6.Name = "MainText"
-MainText_6.Parent = World_3
+MainText_6.Parent = Other_2
 MainText_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 MainText_6.BackgroundTransparency = 1.000
 MainText_6.Position = UDim2.new(0.215726256, 0, 0.116279125, 0)
@@ -1250,7 +1254,7 @@ MainText_6.TextSize = 22.000
 MainText_6.TextWrapped = true
 
 Buttons_6.Name = "Buttons"
-Buttons_6.Parent = World_3
+Buttons_6.Parent = Other_2
 Buttons_6.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Buttons_6.BorderSizePixel = 0
 Buttons_6.Position = UDim2.new(0, 0, 1, 0)
@@ -1451,3 +1455,51 @@ Version_5.Font = Enum.Font.SourceSans
 Version_5.Text = "Version: 0.1"
 Version_5.TextColor3 = Color3.fromRGB(255, 255, 255)
 Version_5.TextSize = 24.000
+
+-- Scripts:
+
+local function WUPDFX_fake_script() -- Combat.LocalScript 
+	local script = Instance.new('LocalScript', Combat)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent.Combat.Visible = not script.Parent.Parent.Parent.Parent.Combat.Visible
+	end)
+	
+end
+coroutine.wrap(WUPDFX_fake_script)()
+local function MDJMO_fake_script() -- Utility.LocalScript 
+	local script = Instance.new('LocalScript', Utility)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent.Utility.Visible = not script.Parent.Parent.Parent.Parent.Utility.Visible
+	end)
+	
+end
+coroutine.wrap(MDJMO_fake_script)()
+local function PZDCQ_fake_script() -- Render.LocalScript 
+	local script = Instance.new('LocalScript', Render)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent.Render.Visible = not script.Parent.Parent.Parent.Parent.Render.Visible
+	end)
+	
+end
+coroutine.wrap(PZDCQ_fake_script)()
+local function ZBDUEJA_fake_script() -- World.LocalScript 
+	local script = Instance.new('LocalScript', World)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent.World.Visible = not script.Parent.Parent.Parent.Parent.World.Visible
+	end)
+	
+end
+coroutine.wrap(ZBDUEJA_fake_script)()
+local function LMRFL_fake_script() -- Other.LocalScript 
+	local script = Instance.new('LocalScript', Other)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent.Other.Visible = not script.Parent.Parent.Parent.Parent.Other.Visible
+	end)
+	
+end
+coroutine.wrap(LMRFL_fake_script)()
